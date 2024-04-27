@@ -1,0 +1,36 @@
+[
+  {
+    "test_id": 1,
+    "testDate": "2024-02-17",
+    "testsList": [
+      {
+        "cow_id": 8,
+        "disease": "corona"
+      },
+      {
+        "cow_id": 13,
+        "disease": "Mastitis "
+      },
+      {
+        "cow_id": 12,
+        "disease": "Mastitis "
+      },
+      {
+        "cow_id": 4,
+        "disease": "Brucellosis "
+      },
+      {
+        "cow_id": 20,
+        "disease": "corona "
+      },
+      {
+        "cow_id": 18,
+        "disease": "Brucellosis "
+      },
+      {
+        "cow_id": 19,
+        "disease": "Brucellosis "
+      }
+    ]
+  }
+]
