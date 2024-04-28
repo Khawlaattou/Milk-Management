@@ -1,5 +1,6 @@
 const path = require('path');
 const fs = require('fs');
+const { error } = require('console');
 
 let cowsList = fs.readFileSync(path.resolve(__dirname, '../data/cows.json'), 'utf-8');
 
@@ -45,7 +46,7 @@ const deleteCow = (req, res) => {
 
         const cows = JSON.parse(cowsList);
 
-        const index = cows.findIndex(cows => cows.cow_id == id);
+        const index = cows.findIndex(cow => cow.cow_id === id);
 
         if (index !== -1) {
             cows.splice(index, 1);
@@ -53,6 +54,7 @@ const deleteCow = (req, res) => {
             fs.writeFileSync(path.resolve(__dirname, '../data/cows.json'), JSON.stringify(cows));
 
             return res.status(200).json({
+                message: 'Cow deleted successfully',
                 cows
             });
         } else {
@@ -63,6 +65,8 @@ const deleteCow = (req, res) => {
         return res.status(500).json({ error: 'Internal server error' });
     }
 };
+
+
 
 //update cow
 const updateCow = (req, res) => {

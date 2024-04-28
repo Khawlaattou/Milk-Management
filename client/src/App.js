@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Births from "./pages/Births";
+import Cows from "./pages/Cows";
+import MilkProductions from "./pages/MilkProductions";
+import MedicalExam from "./pages/MedicalExam";
+import NavBar from './components/NavBar';
+import { Box, Flex } from "@chakra-ui/react";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box
+      bg="#CBD5E0"
+    >
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Cows />} />
+        <Route path="/tests" element={<MedicalExam />} />
+        <Route path="/births" element={<Births />} />
+        <Route path="/productions" element={<MilkProductions />} />
+      </Routes>
+    </Box>
   );
 }
 
